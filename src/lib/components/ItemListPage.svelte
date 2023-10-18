@@ -33,14 +33,14 @@
         {#if items}
             {#each items as item}
             <a href="/{type}/{item.id}">
-                <div class="flex flex-col w-56 p-1 rounded-md gap-1 border-2 border-[#9356a0]">
-                    <div class="h-32 overflow-hidden rounded-md">
-                        <img class="object-cover w-full h-full" src="{item.image ?? fishImage}" alt="">
+                <div class="flex flex-col w-56 rounded-md gap-0 border-2  shadow-xl h-full">
+                    <div class="h-64 overflow-hidden rounded-tl-md rounded-tr-md">
+                        <img class="w-full h-full object-cover" src="{item.image ?? fishImage}" alt="">
                     </div>
-                    <div class="rounded-md px-1">
-                        <h2 class="font-semibold whitespace-nowrap overflow-hidden text-ellipsis max-w-[100%]">{item.name}</h2>
-                        <h3 class="font-semibold">Rp. {numberFormat.format(item.price)}</h3>
-                        <h4 class="font-semibold">{item.seller.username}</h4>
+                    <div class="rounded-md px-3 py-2">
+                        <h2 class="text-lg whitespace-nowrap overflow-hidden text-ellipsis max-w-[100%]">{item.name}</h2>
+                        <h3 class="font-bold">Rp. {numberFormat.format(item.price)}</h3>
+                        <h4 class="font-light">{item.seller.username}</h4>
                     </div>
                 </div>
             </a>
