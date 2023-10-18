@@ -1,0 +1,21 @@
+import { SupabaseClient, Session } from '@supabase/supabase-js'
+
+/// <reference types="@sveltejs/kit" />
+/// <reference types="unplugin-icons/types/svelte" />
+
+declare global {
+	namespace App {
+		interface Locals {
+			supabase: SupabaseClient;
+			getSession(): Promise<Session | null>;
+			getProfile(): Promise<any | null>;
+		}
+		interface PageData {
+			session: Session | null;
+		}
+		// interface Error {}
+		// interface Platform {}
+	}
+}
+
+export {};
