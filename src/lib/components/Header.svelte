@@ -155,10 +155,10 @@
 
 {#if open}
 	<div class="lg:hidden">
-		<nav class="z-20 fixed w-[100%] p-4 flex flex-col gap-2 items-center bg-white/60" transition:fade={options}>
+		<nav class="z-20 fixed w-[100%] p-4 flex flex-col gap-2 items-center bg-gray-200/90 text-1xl" transition:fade={options}>
 			{#each menus as menu}
 				{#if !menu.authenticated || user}
-					<li class="hover:text-gray-300">
+					<li class="hover:text-gray-300 list-none">
 						<a class="p-2" href={menu.href} on:click={closeMenu}>{menu.title}</a>
 					</li>
 				{/if}
