@@ -30,7 +30,7 @@
 	<title>Calm Water</title>
 </svelte:head>
 
-<main class="flex flex-col w-full min-h-full bg-white text-black box-border">
+<main class="flex flex-col w-screen min-h-full bg-white text-black box-border">
     <Header user={profile} />
 
     <slot />

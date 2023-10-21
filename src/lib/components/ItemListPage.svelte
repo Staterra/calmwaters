@@ -29,11 +29,11 @@
             {/each}
         </div>
     </div>
-    <div class="w-[80%] flex-grow flex gap-3 flex-wrap h-full p-4 justify-start align-middle items-center">
+    <div class="w-[80%] flex gap-3 flex-wrap h-full p-4 justify-start align-center items-center content-center">
         {#if items}
-            {#each items as item}
+        {#each items as item}
             <a href="/{type}/{item.id}">
-                <div class="flex flex-col item w-52 rounded-md gap-0 border-2  shadow-xl h-full">
+                <div class="flex flex-col item w-52 md:w-56 rounded-md gap-0 border-2 shadow-xl h-full">
                     <div class="h-64 overflow-hidden rounded-tl-md rounded-tr-md">
                         <img class="w-full h-full object-cover" src="{item.image ?? fishImage}" alt="">
                     </div>
@@ -46,8 +46,8 @@
             </a>
             {/each}
         {:else}
-            <span>Loading...</span>
+        <span>Loading...</span>
         {/if}
-      </div>
+    </div>
 </div>
 
