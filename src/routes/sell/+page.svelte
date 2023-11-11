@@ -63,7 +63,7 @@
         }
 
         clearFish();
-        openModal('Success', 'Successfully created a new fish');
+        openModal('Success', 'Successfully added a new product');
         showModalFish = false;
     }
 
@@ -213,25 +213,13 @@
 <div class="flex min-h-full bg-no-repeat text-black">
     <div class="w-[20%] h-full flex justify-center p-4">
         <div class="flex flex-col gap-4 w-full">
-            <a href="#all-product" on:click={() => setActiveTab('all-product')} class="w-auto items-center flex bg-[#cfa6ed] rounded-xl p-2.5 hover:bg-orange-600">
+            <a href="#all-product" on:click={() => setActiveTab('all-product')} class="w-auto items-center flex bg-[#cfa6ed] rounded-xl p-2.5 hover:bg-purple-600">
                 <Logocart class="text-2xl"></Logocart>
                 <h1 class="text-lg">All product</h1>
             </a>
-            <a href="#new-order" on:click={() => setActiveTab('new-order')} class="w-auto items-center flex bg-[#cfa6ed] rounded-xl p-2.5 hover:bg-orange-600">
+            <a href="#new-order" on:click={() => setActiveTab('new-order')} class="w-auto items-center flex bg-[#cfa6ed] rounded-xl p-2.5 hover:bg-purple-600">
                 <Logocart class="text-2xl"></Logocart>
                 <h1 class="text-lg">New Order</h1>
-            </a>
-            <a href="#ready" on:click={() => setActiveTab('ready')} class="w-auto items-center flex bg-[#cfa6ed] rounded-xl p-2.5 hover:bg-orange-600">
-                <Logocart class="text-2xl"></Logocart>
-                <h1 class="text-lg">Ready</h1>
-            </a>
-            <a href="#delivering" on:click={() => setActiveTab('delivering')} class="w-auto items-center flex bg-[#cfa6ed] rounded-xl p-2.5 hover:bg-orange-600">
-                <Logocart class="text-2xl"></Logocart>
-                <h1 class="text-lg">Delivering</h1>
-            </a>
-            <a href="#delivered" on:click={() => setActiveTab('delivered')} class="w-auto items-center flex bg-[#cfa6ed] rounded-xl p-2.5 hover:bg-orange-600">
-                <Logocart class="text-2xl"></Logocart>
-                <h1 class="text-lg">Delivered</h1>
             </a>
         </div>
     </div>
@@ -246,7 +234,7 @@
                         <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-gray-800 outline-none focus:outline-none">
                         <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                             <h3 class="text-3xl font-semibold">
-                            Add Your New Fish Here
+                            Add Your Product Fish Here
                             </h3>
                             <button class="p-1 ml-auto bg-transparent border-0 text-white float-right text-3xl leading-none font-semibold outline-none focus:outline-none" on:click={toggleModalFish}>
                             <span class="bg-transparent text-white h-6 w-6 text-2xl block outline-none focus:outline-none">
@@ -258,13 +246,13 @@
                             <form>
                                 <div class="my-2 text-lg leading-relaxed">
                                     <label class="block text-sm font-bold mb-2" for="fishname">
-                                        Fish Name
+                                        Product Name
                                     </label>
                                     <input bind:value={newFish.name} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishname" type="text" placeholder="Fish Name">
                                 </div>
                                 <div class="mb-4">
                                     <label class="block  text-sm font-bold mb-2" for="fishprice">
-                                        Fish Price
+                                        Product Price
                                     </label>
                                     <input bind:value={newFish.price} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishprice" type="number" placeholder="Fish Price">
                                 </div>
@@ -276,29 +264,29 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="block text-sm font-bold mb-2" for="fishtype">
-                                        Fish Type
+                                        Product Type
                                     </label>
                                     <Select bind:value={newFish.type} items={types} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishtype" />
                                 </div>
                                 <div class="mb-4">
                                     <label class="block text-sm font-bold mb-2" for="fishdescription">
-                                        Fish Description
+                                        Product Description
                                     </label>
                                     <textarea bind:value={newFish.desc} class="shadow resize-none text-black appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="fishdescription" rows="3" placeholder="Fish Description"></textarea>
                                 </div>
                                 <div class="my-2 text-lg leading-relaxed">
                                     <label class="block text-sm font-bold mb-2" for="fishname">
-                                        Fish Image URL
+                                        Product Image URL
                                     </label>
                                     <input bind:value={newFish.image} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishname" type="text" placeholder="Fish Image">
                                 </div>
                             </form>
                         </div>
                         <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                            <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" on:click={toggleModalFish}>
+                            <button class="text-purple-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" on:click={toggleModalFish}>
                             Close
                             </button>
-                            <button class="bg-orange-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" on:click={addFish}>
+                            <button class="bg-purple-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" on:click={addFish}>
                             Create
                             </button>
                         </div>
@@ -308,62 +296,6 @@
                     <div class="opacity-25 fixed inset-0 z-40 bg-black"></div>
                 {/if}
 
-                <Button class="w-auto" on:click={toggleModalUtility}>SELL UTILITY</Button>
-                {#if showModalUtility}
-                    <div class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex text-white">
-                    <div class="relative w-full my-6 mx-auto max-w-3xl">
-                        <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-gray-800 outline-none focus:outline-none">
-                        <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
-                            <h3 class="text-3xl font-semibold">
-                            Add Utility Product Here
-                            </h3>
-                            <button class="p-1 ml-auto bg-transparent border-0 text-white float-right text-3xl leading-none font-semibold outline-none focus:outline-none" on:click={toggleModalUtility}>
-                            <span class="bg-transparent text-white h-6 w-6 text-2xl block outline-none focus:outline-none">
-                                x
-                            </span>
-                            </button>
-                        </div>
-                        <div class="relative p-6 flex-auto w-full">
-                            <form>
-                                <div class="my-2 text-lg leading-relaxed">
-                                    <label class="block text-sm font-bold mb-2" for="fishname">
-                                        Utility Name
-                                    </label>
-                                    <input bind:value={newUtility.name} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishname" type="text" placeholder="Utility Name">
-                                </div>
-                                <div class="mb-4">
-                                    <label class="block  text-sm font-bold mb-2" for="fishprice">
-                                        Utility Price
-                                    </label>
-                                    <input bind:value={newUtility.price} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishprice" type="number" placeholder="Utility Price">
-                                </div>
-                                <div class="mb-4">
-                                    <label class="block text-sm font-bold mb-2" for="fishdescription">
-                                        Utility Description
-                                    </label>
-                                    <textarea bind:value={newUtility.desc} class="shadow resize-none text-black appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="fishdescription" rows="3" placeholder="Utility Description"></textarea>
-                                </div>
-                                <div class="my-2 text-lg leading-relaxed">
-                                    <label class="block text-sm font-bold mb-2" for="fishname">
-                                        Utility Image URL
-                                    </label>
-                                    <input bind:value={newUtility.image} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishname" type="text" placeholder="Utility image">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
-                            <button class="text-red-500 background-transparent font-bold uppercase px-6 py-2 text-sm outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" on:click={toggleModalUtility}>
-                            Close
-                            </button>
-                            <button class="bg-orange-500 text-white active:bg-emerald-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" on:click={addUtility}>
-                            Create
-                            </button>
-                        </div>
-                        </div>
-                    </div>
-                    </div>
-                    <div class="opacity-25 fixed inset-0 z-40 bg-black"></div>
-                {/if}
             </div>
         </div>
 
@@ -380,17 +312,17 @@
                                 <h1 class="text-2xl">Rp. {numberFormat.format(item.price)}</h1>
                             </div>
                             {#if activeTab === 'new-order'}
-                                <Button on:click={() => setStatus(item, 2)} class="self-end">Accept</Button>
-                                <Button on:click={() => setStatus(item, 1)} class="self-end">Decline</Button>
+                                <Button on:click={() => setStatus(item, 2)} class="self-end w-24" color="purple">Accept</Button>
+                                <Button on:click={() => setStatus(item, 1)} class="self-end w-24" color="purple">Decline</Button>
                             {/if}
 
                             {#if activeTab === 'ready'}
-                                <Button on:click={() => setStatus(item, 3)} class="self-end">Deliver</Button>
-                                <Button on:click={() => setStatus(item, 1)} class="self-end">Cancel</Button>
+                                <Button on:click={() => setStatus(item, 3)} class="self-end w-24" color="purple">Deliver</Button>
+                                <Button on:click={() => setStatus(item, 1)} class="self-end w-24" color="purple">Cancel</Button>
                             {/if}
 
                             {#if activeTab === 'all-product' && item.sold === false}
-                                <Button on:click={() => removeProduct(item)} class="self-end" color="purple">Remove</Button>
+                                <Button on:click={() => removeProduct(item)} class="self-end w-24" color="purple">Remove</Button>
                             {/if}
                         </div>
                     </div>
