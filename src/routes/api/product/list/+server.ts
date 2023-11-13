@@ -19,7 +19,8 @@ export const GET = async ({ request, locals: { supabase, getProfile } }) => {
         name,
         price,
         seller,
-        sold
+        sold,
+        image
       `)
       .eq('seller', profile.id);
 
@@ -34,7 +35,8 @@ export const GET = async ({ request, locals: { supabase, getProfile } }) => {
         name,
         price,
         seller,
-        sold
+        sold,
+        image
       `)
       .eq('seller', profile.id);
 

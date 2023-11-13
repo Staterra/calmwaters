@@ -90,7 +90,7 @@ export const POST = async ({ request, locals: { supabase, getProfile } }) => {
       if (item.fish) {
         await supabase
           .from('Fish')
-          .update({ sold: true })
+          .update({ sold: false })
           .eq('id', item.fish);
       }
 

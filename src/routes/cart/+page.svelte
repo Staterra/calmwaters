@@ -75,8 +75,8 @@
     });
 </script>
 
-<div class="text-black p-6">
-    <div class="bg-[#dccae9]/30 p-6">
+<div class="text-white p-6">
+    <div class="bg-gray-500/40 p-6">
         <h1 class="text-3xl">Your Items:</h1>
         <div class="flex items-center mb-4 pt-6">
             <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
@@ -84,20 +84,20 @@
         </div>
         {#if items}
             {#each items as item}
-                <div class="flex flex-row w-[100%] pt-6 gap-2">
+                <div class="md:flex md:flex-row wmd:-[100%] pt-6 gap-2">
                     <div class="flex mb-4">
                         <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
                     </div>
-                    <div class="h-40 w-72 overflow-hidden rounded-md"> <!-- Set fixed width for landscape size -->
+                    <div class="md:h-40 h-60 md:w-72 w-[100%] overflow-hidden rounded-md"> <!-- Set fixed width for landscape size -->
                         <img class="object-cover w-full h-full" src={item.image} alt="">
                     </div>
-                    <div class="justify-between flex flex-col w-full">
+                    <div class="justify-between md:flex md:flex-col w-full flex-row flex">
                         <div>
-                            <h1 class="font-bold text-3xl">{item.name} {item.sold ? '( SOLD )' : ''}</h1>
-                            <h1 class="text-2xl">Rp. {numberFormat.format(item.price)}</h1>
+                            <h1 class="font-bold text-2xl md:text-3xl">{item.name} {item.sold ? '( SOLD )' : ''}</h1>
+                            <h1 class="text-1xl">Rp. {numberFormat.format(item.price)}</h1>
                             <h1 class="text-1xl">{item.seller.username}</h1>
                         </div>
-                        <Button on:click={async () => { removeFromCart(item) }} class="self-end">Remove From Cart</Button>
+                        <Button on:click={async () => { removeFromCart(item) }} class="self-end" color="purple">Remove</Button>
                     </div>
                 </div>
             {/each}

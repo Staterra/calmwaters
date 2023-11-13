@@ -206,35 +206,35 @@
     }
 
     onMount(async () => {
-        await loadItems(0);
+        await loadItems(-1);
     });
 </script>
 
-<div class="flex min-h-full bg-no-repeat text-black">
-    <div class="w-[20%] h-full flex justify-center p-4">
-        <div class="flex flex-col gap-4 w-full">
-            <a href="#all-product" on:click={() => setActiveTab('all-product')} class="w-auto items-center flex bg-[#cfa6ed] rounded-xl p-2.5 hover:bg-purple-600">
+<div class="flex md:flex-row flex-col min-h-full bg-no-repeat text-white">
+    <div class="w-full md:w-[20%] h-full flex justify-center p-4">
+        <div class="flex flex-row md:flex-col justify-between gap-4 w-full">
+            <a href="#all-product" on:click={() => setActiveTab('all-product')} class="w-[50%] md:w-auto md:justify-start justify-center items-center flex bg-[#724C9D] rounded-xl p-2.5 hover:bg-purple-600">
                 <Logocart class="text-2xl"></Logocart>
-                <h1 class="text-lg">All product</h1>
+                <h1 class="text-sm lg:text-lg">All product</h1>
             </a>
-            <a href="#new-order" on:click={() => setActiveTab('new-order')} class="w-auto items-center flex bg-[#cfa6ed] rounded-xl p-2.5 hover:bg-purple-600">
+            <a href="#new-order" on:click={() => setActiveTab('new-order')} class="w-[50%] md:w-auto md:justify-start justify-center items-center flex bg-[#724C9D] rounded-xl p-2.5 hover:bg-purple-600">
                 <Logocart class="text-2xl"></Logocart>
-                <h1 class="text-lg">New Order</h1>
+                <h1 class="text-sm lg:text-lg">New Order</h1>
             </a>
         </div>
     </div>
-    <div class="w-[80%] flex gap-3 flex-col h-full p-4 justify-start align">
+    <div class="w-full md:w-[80%] flex gap-3 flex-col h-full p-4 justify-start align">
         <div class="flex place-content-between items-center">
             <h1 class="text-3xl">{tabs[activeTab].title}:</h1>
             <div>
-                <Button class="w-auto" on:click={toggleModalFish} color="purple">SELL FISH</Button>
+                <Button class="w-auto" on:click={toggleModalFish} color="purple">Add Product</Button>
                 {#if showModalFish}
                     <div class="overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none justify-center items-center flex text-white">
                     <div class="relative w-full my-6 mx-auto max-w-3xl">
                         <div class="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-gray-800 outline-none focus:outline-none">
                         <div class="flex items-start justify-between p-5 border-b border-solid border-blueGray-200 rounded-t">
                             <h3 class="text-3xl font-semibold">
-                            Add Your Product Fish Here
+                            Add Your Product Here
                             </h3>
                             <button class="p-1 ml-auto bg-transparent border-0 text-white float-right text-3xl leading-none font-semibold outline-none focus:outline-none" on:click={toggleModalFish}>
                             <span class="bg-transparent text-white h-6 w-6 text-2xl block outline-none focus:outline-none">
@@ -258,7 +258,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="block text-sm font-bold mb-2" for="fishtype">
-                                        Dimension
+                                        Weight
                                     </label>
                                     <input bind:value={newFish.dimension} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishdimension" type="number" placeholder="Fish Dimension">
                                 </div>
@@ -302,23 +302,20 @@
         <div class="flex flex-col w-full gap-4">
             {#if items}
                 {#each items as item}
-                    <div class="flex flex-row w-[100%] pb-2 gap-2">
-                        <div class="h-40 w-72 overflow-hidden rounded-md">
-                            <img class="object-cover w-full h-full" src="{fishImage}" alt="">
+                    <div class="flex md:flex-row flex-col w-[100%] pb-2 gap-2">
+                        <div class="h-fit md:h-40 w-full md:w-72 overflow-hidden rounded-md">
+                            <img class="object-cover w-full h-full" src="{item.image ?? fishImage}" alt="">
                         </div>
                         <div class="justify-between flex flex-col w-full">
                             <div>
-                                <h1 class="font-bold text-3xl">{item.name}</h1>
-                                <h1 class="text-2xl">Rp. {numberFormat.format(item.price)}</h1>
+                                <h1 class="font-bold text-xl md:text-3xl">{item.name}</h1>
+                                <h1 class="md:text-2xl text-xl">Rp. {numberFormat.format(item.price)}</h1>
                             </div>
                             {#if activeTab === 'new-order'}
-                                <Button on:click={() => setStatus(item, 2)} class="self-end w-24" color="purple">Accept</Button>
-                                <Button on:click={() => setStatus(item, 1)} class="self-end w-24" color="purple">Decline</Button>
-                            {/if}
-
-                            {#if activeTab === 'ready'}
-                                <Button on:click={() => setStatus(item, 3)} class="self-end w-24" color="purple">Deliver</Button>
-                                <Button on:click={() => setStatus(item, 1)} class="self-end w-24" color="purple">Cancel</Button>
+                                <div class="md:flex-none flex justify-end gap-2">
+                                    <Button on:click={() => setStatus(item, 2)} class="self-end w-24" color="purple">Accept</Button>
+                                    <Button on:click={() => setStatus(item, 1)} class="self-end w-24" color="purple">Decline</Button>
+                                </div>
                             {/if}
 
                             {#if activeTab === 'all-product' && item.sold === false}

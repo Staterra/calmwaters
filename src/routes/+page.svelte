@@ -28,7 +28,10 @@
     ];
 </script>
 
-<div class="flex justify-center items-center content-center w-full bg-no-repeat text-black">
+<div class="justify-center items-center content-center w-full bg-no-repeat text-black">
+    <div class="font-bold text-[6vw]">
+        <img src="{tes2}" alt="" srcset="">
+    </div>
     <div class="font-bold text-[6vw]">
         <img src="{tes1}" alt="" srcset="">
     </div>

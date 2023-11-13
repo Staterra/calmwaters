@@ -1,7 +1,7 @@
 <script lang="ts">
     import "../app.css";
     import Header from '$lib/components/Header.svelte';
-    import backgroundImage from '$lib/images/ikan1.jpg';
+    import backgroundImage from '$lib/images/bghom.jpg';
 
     import { invalidate } from '$app/navigation';
     import { onMount } from 'svelte';
@@ -30,7 +30,7 @@
 	<title>Calm Water</title>
 </svelte:head>
 
-<main class="flex flex-col w-screen min-h-full bg-white text-black box-border">
+<main class="flex flex-col w-screen min-h-full bg-white text-black box-border" style="background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('{backgroundImage}'); background-size: cover; background-repeat: no-repeat;">
     <Header user={profile} />
 
     <slot />

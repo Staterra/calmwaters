@@ -70,30 +70,30 @@
 }
 </style>
 
-<div class="min-h-full bg-no-repeat text-black">
-    <div class="flex items-center content-center p-10">
-        <div class="bg-[#dccae9]/40 rounded-md p-8 flex flex-col">
-            <h1 class="text-5xl justify-center flex">{item.name}</h1>
-            <div class="flex pt-8">
-                <div class="w-[40%]">
+<div class="min-h-full bg-no-repeat text-white">
+    <div class="items-center content-center p-4 sm:p-10">
+        <div class="bg-gray-500/40 rounded-md p-4 sm:p-8 flex flex-col">
+            <h1 class="text-4xl sm:text-5xl justify-center flex">{item.name}</h1>
+            <div class="flex flex-col sm:flex-row pt-8">
+                <div class="w-full sm:w-[40%]">
                     <img src="{item.image}" class="w-full h-full rounded-md" alt="">
                 </div>
-                <div class="flex flex-col place-content-between w-[60%] pl-10">
+                <div class="flex flex-col justify-between place-content-between w-full sm:w-[60%] md:pl-10 sm:pl-2 pt-2">
                     <div>
                         <h3 class="font-semibold text-3xl">Rp. {numberFormat.format(item.price)}</h3>
                         <h4 class="py-3">Seller: {item.seller.username}</h4>
                         <p>{item.description}</p>
                     </div>
-                    <div class="flex justify-end">
-                        <Button disabled={!user || user.id === item.seller.id} on:click={addToCart} class="block" color="purple">
+                    <div class="pt-2 sm:pt-0 sm:flex sm:justify-end">
+                        <Button disabled={!user || user.id === item.seller.id} on:click={addToCart} class="block w-full sm:w-fit" color="purple">
                             Add to cart
                         </Button>
                     </div>
                 </div>
             </div>
             <h1 class="text-3xl pt-10 pb-5">RECOMMENDED ITEM:</h1>
-            <div class="gap-10 flex-row flex place-content-between">
-                <div class="w-[30%] h-full">
+            <div class="gap-5 flex-col sm:flex-row flex place-content-between">
+                <div class="sm:w-[30%] h-full">
                     <a href="">
                         <div class="image-container">
                             <img src="{defaultFish}" id="disable-arrow" class="product-image" alt="">
@@ -101,12 +101,12 @@
                                 <div class="text">Visit Product</div>
                             </div>
                         </div>
-                        <h1>Item Name: adsa</h1>
-                        <h1>Item Price: 11212312</h1>
-                        <h1>Seller: dasdas</h1>
+                        <h1>Item Name: Testing</h1>
+                        <h1>Item Price: 999999</h1>
+                        <h1>Seller: XXXXXX</h1>
                     </a>
                 </div>
-                <div class="w-[30%] h-full">
+                <div class="sm:w-[30%] h-full">
                     <a href="">
                         <div class="image-container">
                             <img src="{defaultFish}" id="disable-arrow" class="product-image" alt="">
@@ -114,12 +114,12 @@
                                 <div class="text">Visit Product</div>
                             </div>
                         </div>
-                        <h1>Item Name: adsa</h1>
-                        <h1>Item Price: 11212312</h1>
-                        <h1>Seller: dasdas</h1>
+                        <h1>Item Name: Testing</h1>
+                        <h1>Item Price: 999999</h1>
+                        <h1>Seller: XXXXXX</h1>
                     </a>
                 </div>
-                <div class="w-[30%] h-full">
+                <div class="sm:w-[30%] h-full">
                     <a href="">
                         <div class="image-container">
                             <img src="{defaultFish}" id="disable-arrow" class="product-image" alt="">
@@ -127,9 +127,9 @@
                                 <div class="text">Visit Product</div>
                             </div>
                         </div>
-                        <h1>Item Name: adsa</h1>
-                        <h1>Item Price: 11212312</h1>
-                        <h1>Seller: dasdas</h1>
+                        <h1>Item Name: Testing</h1>
+                        <h1>Item Price: 999999</h1>
+                        <h1>Seller: XXXXXX</h1>
                     </a>
                 </div>
             </div>    
@@ -140,7 +140,7 @@
                 </div>
             {/if}
             {#if user}
-                <div class="flex flex-row items-center pb-6">
+                <div class="flex flex-row items-center sm:pb-6">
                     <div class="w-12 h-12 mr-4">
                         <img class="rounded-full object-cover w-full h-full" src="{user.image ?? defaultUser}" alt="">
                     </div>
@@ -150,12 +150,12 @@
                 </div>
                 {#if showButton}
                     <div class="flex justify-end gap-5" transition:fly>
-                        <Button class="my-4 w-[10%]" on:click={ClearC} color="purple">Cancel</Button>
-                        <Button class="my-4 w-[10%]" on:click={submitComment} color="purple">Post</Button>
+                        <Button class="my-4 w-[30%] sm:w-[10%]" on:click={ClearC} color="purple">Cancel</Button>
+                        <Button class="my-4 w-[30%] sm:w-[10%]" on:click={submitComment} color="purple">Post</Button>
                     </div>
                 {/if}
             {/if}
-            <div class="flex flex-col">
+            <div class="flex flex-col pt-6 sm:pt-0">
                 {#if comments}
                     {#if !comments.length}
                         <span class="text-lg font-semibold text-white">No comments</span>

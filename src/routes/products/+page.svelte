@@ -47,34 +47,34 @@
         }
     ];
 
-    // async function getTypeFilter() {
-    //     const filter: any = {
-    //         label: 'Type',
-    //         name: 'fish_type',
-    //         type: 'select',
-    //         selected: 'all',
-    //         selections: [
-    //             {
-    //                 name: 'All',
-    //                 value: 'all'
-    //             }
-    //         ]
-    //     };
+    async function getTypeFilter() {
+        const filter: any = {
+            label: 'Type',
+            name: 'fish_type',
+            type: 'select',
+            selected: 'all',
+            selections: [
+                {
+                    name: 'All',
+                    value: 'all'
+                }
+            ]
+        };
 
-    //     const response = await fetch('/api/fish/type');
+        const response = await fetch('/api/fish/type');
 
-    //     if (response.status !== 200) return;
+        if (response.status !== 200) return;
 
-    //     const content = await response.json();
-    //     content.data.forEach((type: any) => {
-    //         filter.selections.push({
-    //             name: type.name,
-    //             value: type.id
-    //         });
-    //     });
+        const content = await response.json();
+        content.data.forEach((type: any) => {
+            filter.selections.push({
+                name: type.name,
+                value: type.id
+            });
+        });
 
-    //     filters = [...filters, filter];
-    // }
+        filters = [...filters, filter];
+    }
 
     async function getItems() {
         items = null;
@@ -111,7 +111,7 @@
     }
 
     onMount(async () => {
-        // await getTypeFilter();
+        await getTypeFilter();
         await getItems();
     });
 </script>

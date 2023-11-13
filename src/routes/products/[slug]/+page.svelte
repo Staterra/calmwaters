@@ -88,6 +88,6 @@
     {modalMessage}
   </p>
   <svelte:fragment slot='footer'>
-    <Button>Close</Button>
+    <Button color="purple">Close</Button>
   </svelte:fragment>
 </Modal>

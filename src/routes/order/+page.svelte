@@ -90,7 +90,7 @@
                 {#each items as item}
                     <div class="flex flex-row w-[100%] pb-2 gap-2">
                         <div class="h-40 w-72 overflow-hidden rounded-md">
-                            <img class="object-cover w-full h-full" src="{fishImage}" alt="">
+                            <img class="object-cover w-full h-full" src="{item.image ?? fishImage}" alt="">
                         </div>
                         <div class="justify-between flex flex-col w-full">
                             <div>
@@ -117,6 +117,6 @@
       {modalMessage}
     </p>
     <svelte:fragment slot='footer'>
-        <Button>Close</Button>
+        <Button color="purple">Close</Button>
     </svelte:fragment>
 </Modal>
