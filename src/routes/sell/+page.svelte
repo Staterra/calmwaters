@@ -206,7 +206,7 @@
     }
 
     onMount(async () => {
-        await loadItems(-1);
+        await loadItems(0);
     });
 </script>
 
@@ -248,19 +248,19 @@
                                     <label class="block text-sm font-bold mb-2" for="fishname">
                                         Product Name
                                     </label>
-                                    <input bind:value={newFish.name} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishname" type="text" placeholder="Fish Name">
+                                    <input bind:value={newFish.name} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishname" type="text" placeholder="Product Name">
                                 </div>
                                 <div class="mb-4">
                                     <label class="block  text-sm font-bold mb-2" for="fishprice">
                                         Product Price
                                     </label>
-                                    <input bind:value={newFish.price} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishprice" type="number" placeholder="Fish Price">
+                                    <input bind:value={newFish.price} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishprice" type="number" placeholder="Product Price">
                                 </div>
                                 <div class="mb-4">
                                     <label class="block text-sm font-bold mb-2" for="fishtype">
                                         Weight
                                     </label>
-                                    <input bind:value={newFish.dimension} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishdimension" type="number" placeholder="Fish Dimension">
+                                    <input bind:value={newFish.dimension} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishdimension" type="number" placeholder="Product Dimension">
                                 </div>
                                 <div class="mb-4">
                                     <label class="block text-sm font-bold mb-2" for="fishtype">
@@ -272,13 +272,13 @@
                                     <label class="block text-sm font-bold mb-2" for="fishdescription">
                                         Product Description
                                     </label>
-                                    <textarea bind:value={newFish.desc} class="shadow resize-none text-black appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="fishdescription" rows="3" placeholder="Fish Description"></textarea>
+                                    <textarea bind:value={newFish.desc} class="shadow resize-none text-black appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline" id="fishdescription" rows="3" placeholder="Product Description"></textarea>
                                 </div>
                                 <div class="my-2 text-lg leading-relaxed">
                                     <label class="block text-sm font-bold mb-2" for="fishname">
                                         Product Image URL
                                     </label>
-                                    <input bind:value={newFish.image} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishname" type="text" placeholder="Fish Image">
+                                    <input bind:value={newFish.image} class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="fishname" type="text" placeholder="Product Image">
                                 </div>
                             </form>
                         </div>

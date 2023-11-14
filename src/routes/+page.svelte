@@ -2,37 +2,14 @@
     import tes1 from '$lib/images/1.png';
     import tes2 from '$lib/images/2.png';
     import img3 from '$lib/images/ikan3.jpg';
-    import { Button } from 'flowbite-svelte';
-    import { CarouselTransition } from 'flowbite-svelte';
-
-
-    export const images = [
-        {
-            id: 0,
-            name: "",
-            imgurl: tes1,
-            attribution: "",
-        },
-        {
-            id: 1,
-            name: "",
-            imgurl: tes2,
-            attribution: "",
-        },
-        {
-            id: 2,
-            name: "",
-            imgurl: img3,
-            attribution: "",
-        },
-    ];
+    import { Button } from 'flowbite-svelte';   
 </script>
 
-<div class="justify-center items-center content-center w-full bg-no-repeat text-black">
-    <div class="font-bold text-[6vw]">
-        <img src="{tes2}" alt="" srcset="">
+<div class="justify-center items-center content-center w-full bg-no-repeat text-white">
+    <div class="text-center py-14 font-bold italic text-[6vw]">
+        <h1>Welcome</h1>
     </div>
-    <div class="font-bold text-[6vw]">
-        <img src="{tes1}" alt="" srcset="">
+    <div class="text-center px-10 font-bold italic text-[4vw]">
+        <h1>The water are still, The challenging is real. Are you up for it?</h1>
     </div>
 </div>
