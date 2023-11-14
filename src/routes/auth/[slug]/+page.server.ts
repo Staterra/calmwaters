@@ -73,7 +73,7 @@ export const actions: Actions = {
         });
       }
 
-      if (!body['username'] || !body['email'] || !body['password'] || !body['confirm-password']) {
+      if (!body['username'] || !body['email'] || !body['password'] || !body['confirm-password'] || !body['phone']) {
         return fail(422, {
           error: 'Please complete all the forms'
         });
@@ -126,7 +126,8 @@ export const actions: Actions = {
         .from('User')
         .insert({
           username: body.username,
-          email: body.email
+          email: body.email,
+          phone_number: body.phone
         });
 
       if (userError) {

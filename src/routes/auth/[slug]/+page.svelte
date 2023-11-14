@@ -47,6 +47,9 @@
               <FloatingLabelInput id="email-input" name="email" type="email" required label="Email" class="text-white font-semibold text-lg focus:border-white"></FloatingLabelInput>
             </div>
             <div class="flex flex-col gap-1">
+              <FloatingLabelInput id="phone-input" name="phone" type="tel" required label="Phone Number" class="text-white font-semibold text-lg focus:border-white"></FloatingLabelInput>
+            </div>
+            <div class="flex flex-col gap-1">
               <FloatingLabelInput id="password-input" name="password" type="password" required label="Password" class="text-white font-semibold text-lg focus:border-white"></FloatingLabelInput>
             </div>
             <div class="flex flex-col gap-1">

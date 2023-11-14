@@ -1,4 +1,6 @@
-import { json } from "@sveltejs/kit";
+import { goto } from "$app/navigation";
+import { json, redirect } from "@sveltejs/kit";
+
 
 export const POST = async ({ request, locals: { supabase, getProfile } }) => {
   const profile = await getProfile();
@@ -17,8 +19,8 @@ export const POST = async ({ request, locals: { supabase, getProfile } }) => {
     const { data: cartData, error: cartError } = await supabase
       .from('Cart')
       .select(`
-        fish ( id, sold ),
-        utility ( id, sold )
+        fish ( id, sold),
+        utility ( id, sold)
       `)
       .eq('user', profile.id);
 
@@ -35,7 +37,7 @@ export const POST = async ({ request, locals: { supabase, getProfile } }) => {
         }, { status: 400 });
       }
 
-      if (fish) {
+      if (fish) {        
         items.push({
           fish: fish.id
         });

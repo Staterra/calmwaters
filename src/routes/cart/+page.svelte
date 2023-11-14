@@ -1,7 +1,9 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
     import fishImage from '$lib/images/ikan1.jpg';
     import { Button, Modal } from 'flowbite-svelte';
 	import { onMount } from 'svelte';
+	import { each } from 'svelte/internal';
 
     const numberFormat = new Intl.NumberFormat();
 
@@ -46,6 +48,17 @@
             openModal('Error', 'There is nothing in the cart');
             return;
         }
+
+        var count = 0;
+
+        items.forEach(item => {
+            var string = item.name + " ordered";
+            var replace = / /gi;
+            string = string.replace(replace, "%20");
+            var url = "https://wa.me/" + item.seller.phone_number + "?text=" + string
+            let new_tab = window.open();
+            new_tab.location.href = url;
+        });
 
         const response = await fetch('/api/cart/checkout', {
             method: 'POST'
@@ -97,7 +110,7 @@
                             <h1 class="text-1xl">Rp. {numberFormat.format(item.price)}</h1>
                             <h1 class="text-1xl">{item.seller.username}</h1>
                         </div>
-                        <Button on:click={async () => { removeFromCart(item) }} class="self-end" color="purple">Remove</Button>
+                        <Button on:click={async () => {removeFromCart(item)}} class="self-end" color="purple">Remove</Button>
                     </div>
                 </div>
             {/each}
