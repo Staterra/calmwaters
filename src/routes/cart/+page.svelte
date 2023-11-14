@@ -65,7 +65,7 @@
         });
 
         const content = await response.json();
-        openModal('Error', content.message);
+        openModal('Success', content.message);
 
         await loadItems();
     }
