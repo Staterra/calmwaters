@@ -32,7 +32,7 @@
 
     {#if form && !form.error}
       <div class="w-full py-4 px-4 bg-green-500/80 rounded-md text-white font-bold">
-        <span>Successfully created account</span>
+        <span>Successfully created account. please verify email address</span>
       </div>
     {/if}
 
