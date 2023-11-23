@@ -10,6 +10,6 @@
         <h1>Welcome</h1>
     </div>
     <div class="text-center px-10 font-bold italic text-[4vw]">
-        <h1>The water are still, The challenging is real. Are you up for it?</h1>
+        <h1>The water are still, The challenge is real. Are you up for it?</h1>
     </div>
 </div>
