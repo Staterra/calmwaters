@@ -52,7 +52,7 @@
         var count = 0;
 
         items.forEach(item => {
-            var string = item.name + " ordered";
+            var string = "Halo, saya mau memesan " + item.name;
             var replace = / /gi;
             string = string.replace(replace, "%20");
             var url = "https://wa.me/" + item.seller.phone_number + "?text=" + string
